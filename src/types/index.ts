@@ -20,4 +20,5 @@ export type NotesData = {
 export interface NotesContextType {
   notes: NotesData[];
   addNote: (colors: Colors) => void;
+  removeNote: (id: number) => void;
 }

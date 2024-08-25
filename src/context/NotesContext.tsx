@@ -17,8 +17,12 @@ export const NotesProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     setNotes((prevNotes) => [...prevNotes, newNote]);
   };
 
+  const removeNote = (id: number) => {
+    setNotes((prevNotes) => prevNotes.filter((note) => note.$id !== id));
+  };
+
   return (
-    <NotesContext.Provider value={{ notes, addNote }}>
+    <NotesContext.Provider value={{ notes, addNote, removeNote }}>
       {children}
     </NotesContext.Provider>
   );

@@ -1,8 +1,11 @@
 import { Trash2 } from "lucide-react";
 import { NotesData, Position } from "../types";
 import { useEffect, useRef, useState } from "react";
+import { useNotes } from "../context/NotesContext";
 
 export function NotesCard({ note }: { note: NotesData }) {
+
+  const { removeNote } = useNotes();
 
   const [position, setPosition] = useState(note.position)
 
@@ -79,7 +82,7 @@ export function NotesCard({ note }: { note: NotesData }) {
         className="card-header"
         style={{ backgroundColor: colors.colorHeader }}
       >
-        <Trash2 size={20} color={colors.colorText} />
+        <Trash2 size={20} color={colors.colorText} onClick={() => removeNote(note.$id)} />
       </div>
 
       <div className="card-body">
