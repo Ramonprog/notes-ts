@@ -1,3 +1,4 @@
+import { Trash2 } from "lucide-react";
 import { FakeDataItem } from "../types";
 
 export function NotesCard({ note }: { note: FakeDataItem }) {
@@ -10,7 +11,9 @@ export function NotesCard({ note }: { note: FakeDataItem }) {
       <div
         className="card-header"
         style={{ backgroundColor: colors.colorHeader }}
-      ></div>
+      >
+        <Trash2 size={20} color={colors.colorText} />
+      </div>
 
       <div className="card-body">
         <textarea
