@@ -13,6 +13,6 @@ export type Colors = {
 export type FakeDataItem = {
     $id: number;
     body: string;
-    colors: string;  // armazenado como JSON string
-    position: string;  // armazenado como JSON string
+    colors: Colors;  
+    position: Position;  
 };
