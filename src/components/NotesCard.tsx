@@ -1,8 +1,8 @@
 import { Trash2 } from "lucide-react";
-import { FakeDataItem, Position } from "../types";
+import { NotesData, Position } from "../types";
 import { useEffect, useRef, useState } from "react";
 
-export function NotesCard({ note }: { note: FakeDataItem }) {
+export function NotesCard({ note }: { note: NotesData }) {
 
   const [position, setPosition] = useState(note.position)
 

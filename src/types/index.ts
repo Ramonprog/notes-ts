@@ -10,9 +10,14 @@ export type Colors = {
     colorText: string;
 };
 
-export type FakeDataItem = {
+export type NotesData = {
     $id: number;
     body: string;
     colors: Colors;  
     position: Position;  
 };
+
+export interface NotesContextType {
+  notes: NotesData[];
+  addNote: (colors: Colors) => void;
+}
