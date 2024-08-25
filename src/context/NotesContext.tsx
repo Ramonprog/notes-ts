@@ -8,11 +8,20 @@ export const NotesProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [notes, setNotes] = useState<NotesData[]>([]);
 
   const addNote = (colors: Colors) => {
+
+    const spacing = 50;
+
+    // Calcule a nova posição
+    const newPosition = {
+      x: notes.length * spacing,
+      y: notes.length * spacing,
+    };
+
     const newNote: NotesData = {
       $id: notes.length + 1,
       body: '',
       colors,
-      position: { x: 0, y: 0 },
+      position: newPosition,
     };
     setNotes((prevNotes) => [...prevNotes, newNote]);
   };
